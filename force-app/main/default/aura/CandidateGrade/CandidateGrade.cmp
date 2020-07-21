@@ -1,0 +1,25 @@
+<aura:component controller="CandidateGradeController" implements="flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="temperature" type="String" />
+    <aura:attribute name="commission" type="String" />
+    <aura:attribute name="displayGrade" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <lightning:card title="Candidate Grade" iconName="utility:connected_apps">
+        <aura:if isTrue="{!v.displayGrade}">
+            <div class="slds-text-heading_large slds-card__body_inner">
+                <aura:text value="{!v.temperature}" />
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <aura:text value="{!'You can get a commission of up to ' + v.commission + '$'}" />
+            </div>
+
+            <aura:set attribute="else">
+                <div class="slds-card__body slds-card__body_inner">
+                    Please add candidate salary and next availability dates to display the grade
+                </div>
+            </aura:set>
+        </aura:if>
+        
+    </lightning:card>
+</aura:component>	
