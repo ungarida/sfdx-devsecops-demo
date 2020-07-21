@@ -4,6 +4,11 @@
     <aura:attribute name="displayGrade" type="Boolean" default="false" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
+    <ltng:require
+    styles="{!$Resource.SLDSv2 + '/assets/styles/lightning-design-system-ltng.css'}"
+    scripts="{!$Resource.jquery}"
+    afterScriptsLoaded="{!c.scriptsLoaded}" />
+
 
     <lightning:card title="Candidate Grade" iconName="utility:connected_apps">
         <aura:if isTrue="{!v.displayGrade}">
