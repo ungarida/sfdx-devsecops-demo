@@ -13,6 +13,7 @@ public with sharing class CandidateGradeController {
         String temperature = '';
         Double commission = 0;
         
+        // set the temperature
         if (currentContact.Salary__c >= 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
             temperature = 'Hot';
         }
