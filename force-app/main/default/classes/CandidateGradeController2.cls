@@ -32,6 +32,10 @@ public with sharing class CandidateGradeController2 {
             commission = Double.valueOf(currentContact.Salary__c) * 0.1;
         }
 
+        commission = Double.valueOf(currentContact.Salary__c) * 0.1;
+        
+        
+        
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
     }
     
