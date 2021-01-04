@@ -2,6 +2,7 @@ public with sharing class CandidateGradeController {
     public CandidateGradeController() {   
     }
     
+    //New commit.
     //getCandidateGrade method used for tests.
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId) {
