@@ -33,7 +33,7 @@ public with sharing class CandidateGradeController {
         }
         
         // Build the query t-03
-        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactId2 + '\'';
+        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'3\'';
         Contact currentContact2 = Database.query(selectQueryString2);
 
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
