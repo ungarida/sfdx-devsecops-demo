@@ -10,6 +10,7 @@ public with sharing class CandidateGradeController2 {
         String temperature = '';
         Double commission = 0;
         //a new commit
+        //another commit
         if (currentContact.Salary__c >= 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
             temperature = 'Hot';
         }
