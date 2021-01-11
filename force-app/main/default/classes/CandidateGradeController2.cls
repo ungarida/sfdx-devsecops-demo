@@ -2,7 +2,7 @@ public with sharing class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
     
-    
+    //A new commit
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade4(Id contactId) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
