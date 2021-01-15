@@ -1,4 +1,4 @@
-public with sharing class CandidateGradeController2 {
+public class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
     
