@@ -3,6 +3,7 @@ public with sharing class CandidateGradeController {
     }
 
     //New commit
+    //New commit, no problem added
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId, String contactId2) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
