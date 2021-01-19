@@ -4,7 +4,7 @@ public class CandidateGradeController2 {
     
     
     @AuraEnabled
-    public static CandidateGradeInfo getCandidateGrade4(Id contactId) {
+    public static CandidateGradeInfo getCandidateGrade4(Id contactId, String contactId2) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
@@ -33,7 +33,9 @@ public class CandidateGradeController2 {
         }
 
         commission = Double.valueOf(currentContact.Salary__c) * 0.1;
-        
+        // Build the query
+        String selectQueryString = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactId2 + '\'';
+        Contact currentContact2 = Database.query(selectQueryString2);
         
         
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
