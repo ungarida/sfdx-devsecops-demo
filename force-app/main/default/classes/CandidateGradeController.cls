@@ -1,4 +1,5 @@
 public with sharing class CandidateGradeController {
+    //New comment here
     public CandidateGradeController() {   
     }
 
