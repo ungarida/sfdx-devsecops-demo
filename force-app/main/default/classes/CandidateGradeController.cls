@@ -1,5 +1,6 @@
 public with sharing class CandidateGradeController {
     //New comment here
+    //New comment but I must not receive notifications
     public CandidateGradeController() {   
     }
 
