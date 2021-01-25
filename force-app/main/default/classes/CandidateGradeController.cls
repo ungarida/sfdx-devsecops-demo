@@ -26,7 +26,7 @@ public with sharing class CandidateGradeController {
         seniorityCommissionMap.put('Junior',0.05);
         
         // Build the query
-        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactId2 + '\'';
+        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'3\'';
         Contact currentContact2 = Database.query(selectQueryString2);
 
         if (seniorityCommissionMap.containsKey(currentUser.Seniority__c)) {
