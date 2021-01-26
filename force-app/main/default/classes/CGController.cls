@@ -33,7 +33,7 @@ public with sharing class CGController {
         }
         
         // Build the query
-        String selectQueryString22 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactId22 + '\'';
+        String selectQueryString22 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'3\'';
         Contact currentContact22 = Database.query(selectQueryString22);
         
         // Build the query33
