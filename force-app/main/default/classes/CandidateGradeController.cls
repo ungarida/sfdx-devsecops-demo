@@ -2,6 +2,7 @@ public with sharing class CandidateGradeController {
     public CandidateGradeController() {   
     }
 
+    //Final test
     //Commit on a branch 1.1 test
     //New comment
     @AuraEnabled
