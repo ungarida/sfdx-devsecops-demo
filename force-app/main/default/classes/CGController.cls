@@ -2,6 +2,7 @@ public with sharing class CGController {
     public CGController() {   
     }
 
+    //New comment on CGController
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId, String contactId22, String contactId33) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
