@@ -6,7 +6,7 @@ public with sharing class CandidateGradeController {
     //Commit on a branch 1.1 test
     //New comment
     @AuraEnabled
-    public static CandidateGradeInfo getCandidateGrade(Id contactId, String contactId2) {
+    public static CandidateGradeInfo getCandidateGrade(Id contactId, String contactId22) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
@@ -28,7 +28,7 @@ public with sharing class CandidateGradeController {
         seniorityCommissionMap.put('Junior',0.05);
         
         // Build the query
-        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'3\'';
+        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactId22 + '\'';
         Contact currentContact2 = Database.query(selectQueryString2);
 
         if (seniorityCommissionMap.containsKey(currentUser.Seniority__c)) {
