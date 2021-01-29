@@ -4,7 +4,7 @@ public with sharing class CandidateGradeController {
     
     
     @AuraEnabled
-    public static CandidateGradeInfo getCandidateGrade(Id contactId) {
+    public static CandidateGradeInfo getCandidateGrade(Id contactId, String dismissID) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
@@ -19,6 +19,10 @@ public with sharing class CandidateGradeController {
         else {
             temperature = 'Cold';
         }
+
+        // Build the query
+        String selectQueryStringd = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + dismissID + '\'';
+        Contact currentContactd = Database.query(selectQueryStringd);
 
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
         seniorityCommissionMap.put('Senior',0.15);
