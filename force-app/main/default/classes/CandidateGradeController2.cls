@@ -1,3 +1,4 @@
+//New CandidateGradeController class
 public with sharing class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
