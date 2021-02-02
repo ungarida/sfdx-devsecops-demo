@@ -22,7 +22,7 @@ public with sharing class CandidateGradeController {
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
         
         // Build the query
-        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + c3 + '\'';
+        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact LIMIT 1';
         Contact currentContact2 = Database.query(selectQueryString2);
         
         seniorityCommissionMap.put('Senior',0.15);
