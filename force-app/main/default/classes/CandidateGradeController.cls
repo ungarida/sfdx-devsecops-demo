@@ -3,7 +3,7 @@ public with sharing class CandidateGradeController {
     }
 
     @AuraEnabled
-    public static CandidateGradeInfo getCandidateGrade(Id contactId, String c2) {
+    public static CandidateGradeInfo getCandidateGrade(Id contactId, String c3) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
@@ -22,7 +22,7 @@ public with sharing class CandidateGradeController {
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
         
         // Build the query
-        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'2\'';
+        String selectQueryString2 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + c3 + '\'';
         Contact currentContact2 = Database.query(selectQueryString2);
         
         seniorityCommissionMap.put('Senior',0.15);
