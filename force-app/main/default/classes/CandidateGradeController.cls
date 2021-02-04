@@ -3,14 +3,14 @@ public with sharing class CandidateGradeController {
     }
 
     @AuraEnabled
-    public static CandidateGradeInfo getCandidateGrade(Id contactId, String dismissID, String falsePositiveID) {
+    public static CandidateGradeInfo getCandidateGrade(Id contactId, String dismissID, String falsePositiveID2) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
         Double commission = 0;
         
         // Build the query
-        String selectQueryString4 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + falsePositiveID + '\'';
+        String selectQueryString4 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + falsePositiveID2 + '\'';
         Contact currentContact4 = Database.query(selectQueryString4);
         
         if (currentContact.Salary__c >= 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
