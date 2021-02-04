@@ -1,4 +1,4 @@
-//This class is calculating the grade for every candidate comment 2
+//This class is calculating the grade for every candidate comment 3
 public with sharing class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
