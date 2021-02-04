@@ -9,7 +9,7 @@ public with sharing class CandidateGradeController {
         String temperature = '';
         Double commission = 0;
         
-        // Build the query dismiss
+        // Build the query dismiss test
         String selectQueryString4 = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + falsePositiveID2 + '\'';
         Contact currentContact4 = Database.query(selectQueryString4);
         
