@@ -1,8 +1,7 @@
 public with sharing class CandidateGradeController {
     public CandidateGradeController() {   
     }
-    
-    //Dismiss something here
+
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId, String dismissID, String falsePositiveID) {
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];

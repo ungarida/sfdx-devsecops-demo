@@ -1,7 +1,7 @@
+//This class is calculating the grade for every candidate
 public with sharing class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
-    
     
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade4(Id contactId) {
@@ -32,6 +32,7 @@ public with sharing class CandidateGradeController2 {
             commission = Double.valueOf(currentContact.Salary__c) * 0.1;
         }
 
+        commission = Double.valueOf(currentContact.Salary__c) * 0.1;        
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
     }
     
