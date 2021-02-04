@@ -25,6 +25,11 @@ public with sharing class CandidateGradeController {
         Contact currentContactd = Database.query(selectQueryStringd);
 
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
+        
+        for (int i = 0; i < 5; i++) {
+            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
+        }
+        
         seniorityCommissionMap.put('Senior',0.15);
         seniorityCommissionMap.put('Medium',0.1);
         seniorityCommissionMap.put('Junior',0.05);
