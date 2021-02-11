@@ -9,7 +9,7 @@ public with sharing class CandidateGradeController {
         String temperature = '';
         Double commission = 0;
         
-        //SOQL in loop 3
+        //SOQL in loop 4
         for (int i = 0; i < 5; i++) {
             Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         }
