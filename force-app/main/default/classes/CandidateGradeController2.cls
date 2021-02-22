@@ -1,5 +1,5 @@
 //This class is calculating the grade for every candidate
-public with sharing class CandidateGradeController2 {
+public without sharing class CandidateGradeController2 {
     public CandidateGradeController() {   
     }
     
