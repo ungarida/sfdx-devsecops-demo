@@ -2,7 +2,7 @@ public with sharing class CandidateGradeController {
     public CandidateGradeController() {   
     }
     
-    //getCandidateGrade method used for tests 2
+    //getCandidateGrade method used for tests 3
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(String contactId) {
         
