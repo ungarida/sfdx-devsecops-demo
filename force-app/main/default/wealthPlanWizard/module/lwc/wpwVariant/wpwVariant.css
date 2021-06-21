@@ -1,0 +1,12 @@
+/**
+ * Created by naresh on 20/04/2020.
+ */
+.remove-button
+{
+    position: relative;
+    margin-top: -50px;
+}
+.clear{
+    clear: right;
+    display: block;
+}

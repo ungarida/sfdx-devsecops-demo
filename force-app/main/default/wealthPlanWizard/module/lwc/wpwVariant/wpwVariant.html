@@ -1,0 +1,39 @@
+<template>
+
+    <style>
+        div.tooltip span {
+            display: inline;
+            position: absolute;
+            border: 1px solid #cccccc;
+            background: #FFC;
+            color: #000000;
+            z-index: 10000;
+        }
+
+        div.tooltip2 span {
+            display: inline;
+            position: relative;
+            border: 1px solid #cccccc;
+            background: #FFC;
+            color: #000000;
+            z-index: 10000;
+        }
+    </style>
+
+    <div class="slds-is-relative" style="position: absolute;">
+
+    </div>
+
+    <template if:true={wealthPlan}>
+
+        <div class="slds-is-relative" style="position: relative;">
+
+        </div>
+
+        <c-wpw-optimize-deposit wealth-plan={m_wealthPlan}></c-wpw-optimize-deposit>
+        <c-wpw-vary-risk wealth-plan={m_wealthPlan}></c-wpw-vary-risk>
+        <c-wpw-select-goals wealth-plan={m_wealthPlan}></c-wpw-select-goals>
+        <c-confirm-dialog message={labels.Variant_Delete_Message}></c-confirm-dialog>
+    </template>
+
+</template>
