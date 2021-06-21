@@ -1,0 +1,85 @@
+<!--
+ - Created by Hugo on 24/03/2020.
+ -->
+
+<!-- Lightning Input Lookup -->
+
+<template>
+    <div>
+        <template if:false={selectedRecord}>
+            <div>
+                <c-lightning-input-lookup-search
+                        onlookupvaluechange={handleOnChange}
+                        onlookupfocus={handleOnChange}
+                        onlookupblur={handleOnBlur}
+                        disabled={disabled}>
+                </c-lightning-input-lookup-search >
+            </div>
+        </template>
+
+        <!-- Errors -->
+        <div >
+            <template if:true={error}>
+                <template if:true={error.details}>
+                    <template if:true={error.details.body}>
+                        {error.details.body.message}
+                    </template>
+                </template>
+            </template>
+        </div>
+
+
+        <!-- Result ComboBox -->
+        <div class="slds-size_1-of-1">
+            <template if:false={selectedRecord}>
+                <template if:true={showDropdown}>
+                    <div class="slds-dropdown slds-dropdown_length-5 slds-dropdown--left slds-is-relative slds-size_1-of-1" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                            <template for:each={records} for:item="record">
+                                <c-lightning-input-lookup-row  key={record.Id} record={record}
+                                                               onselect={handleSelect} iconname={iconName}
+                                                               fieldname={searchfield}></c-lightning-input-lookup-row>
+                            </template>
+                            <template if:true={allowNewRecord}>
+                                <li role="presentation" class="slds-listbox__item">
+                                    <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                         role="option" onclick={handleSelectNew}>
+                                    <span class="slds-media__body">
+                                        <span class="slds-truncate" title={labels.New}>{labels.New}</span>
+                                    </span>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+    <div>
+        <template if:true={selectedRecord}>
+            <div class="slds-combobox__form-element slds-input-has-icon
+                            slds-input-has-icon_left-right" role="none">
+                    <span class="slds-icon_container
+                                slds-combobox__input-entity-icon">
+                        <lightning-icon icon-name={iconName} ></lightning-icon>
+                    </span>
+                <input class="slds-input slds-combobox__input
+                           slds-combobox__input-value"
+                       id="combobox-id-5" aria-controls="listbox-id-5"
+                       autocomplete="off" role="textbox" type="text" readonly=""
+                       value={selectedRecord.Name}
+                       disabled
+                />
+                <template if:false={disabled}>
+                    <button class="slds-icon_container slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                            onclick={handleRemove}>
+                        <lightning-icon class="slds-button__icon" size="x-small" icon-name="utility:close"></lightning-icon>
+                    </button>
+                </template>
+
+            </div>
+        </template>
+    </div>
+
+</template>
