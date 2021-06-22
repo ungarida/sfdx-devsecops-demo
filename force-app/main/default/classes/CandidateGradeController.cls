@@ -30,6 +30,8 @@ public class CandidateGradeController {
         else {
             commission = Double.valueOf(currentContact.Salary__c) * 0.1;
         }
+        
+        System.debug(UserInfo.getSessionId());
 
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
     }
